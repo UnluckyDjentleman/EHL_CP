@@ -1,0 +1,94 @@
+﻿<Page x:Class="WpfApp1.AdminBonus"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminBonus">
+    <Page.Resources>
+        <ResourceDictionary Source="/Styles/ElementsStyle.xaml"></ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Style="{DynamicResource header}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Icons/hp.png"></ImageBrush>
+                </Grid.Background>
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBlock Style="{DynamicResource HeaderText}" Text="{DynamicResource article}"></TextBlock>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ScrollViewer>
+                <StackPanel>
+                    <GroupBox Margin="10" Width="750">
+                        <GroupBox.Header>
+                            <Button Style="{DynamicResource signInButton2}" Content="Add" Command="{Binding SaveCommand}"></Button>
+                        </GroupBox.Header>
+                        <Grid Height="350">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="140*"></RowDefinition>
+                                <RowDefinition Height="200*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200*"></ColumnDefinition>
+                                    <ColumnDefinition Width="200*"></ColumnDefinition>
+                                    <ColumnDefinition Width="200*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="1">
+                                    <Button x:Name="photo" Command="{Binding Path= BRecord.ChoosePhoto}" Width="225" BorderBrush="#5b5b5b" Margin="10,0,9.8,0.2">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="{Binding Path=BRecord.ImagePath, UpdateSourceTrigger=PropertyChanged}"></ImageBrush>
+                                        </Button.Background>
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <TextBlock Style="{DynamicResource text}" Text="Header" Margin="50 -5"></TextBlock>
+                                <TextBox Name="header" Style="{DynamicResource textboxtest}" Margin="50,14,49.6,61.2" Height="Auto" Width="494" Text="{Binding Path=BRecord.Header,Mode=TwoWay}"></TextBox>
+                            </Grid>
+                        </Grid>
+                    </GroupBox>
+                    <StackPanel>
+                        <ListView Background="Transparent" Name="art" BorderThickness="0" ItemsSource="{Binding BRecord.bonusRecords}" HorizontalAlignment="Center">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Style="{DynamicResource ItemA}" MinWidth="720">
+                                        <StackPanel Orientation="Horizontal">
+                                            <DockPanel Height="100" Margin="10" Width="100">
+                                                <Border Height="100"
+                                                Width="100" VerticalAlignment="Center">
+                                                    <Border.Background>
+                                                        <ImageBrush Stretch="Fill" ImageSource="{Binding Image}"/>
+                                                    </Border.Background>
+                                                </Border>
+                                            </DockPanel>
+                                            <StackPanel Orientation="Vertical" MinWidth="340">
+                                                <TextBlock Text="BONUS!!!" Style="{DynamicResource Date}" HorizontalAlignment="Center"></TextBlock>
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                    <TextBlock Text="{Binding Header}" Style="{DynamicResource HeaderText}" MaxWidth="720"></TextBlock>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

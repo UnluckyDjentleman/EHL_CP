@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfApp1.UpdatingMatch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1" 
+        xmlns:viewmodels="clr-namespace:WpfApp1.ViewModels" 
+        d:DataContext="{d:DesignInstance Type=viewmodels:MatchVM}"
+        mc:Ignorable="d"
+        Title="UpdatingMatch" Height="450" Width="800">
+    <Window.Resources>
+        <ResourceDictionary Source="/Styles/ElementsStyle.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Icons/background2.jpg" />
+        </Grid.Background>
+        <Border Style="{DynamicResource ItemM}" Height="80">
+            <StackPanel Orientation="Horizontal">
+                <DockPanel Height="60" Margin="10" Width="60">
+                    <Border Height="60"  Width="60" VerticalAlignment="Center">
+                        <Border.Background>
+                            <ImageBrush Stretch="Fill" ImageSource="{Binding Logo1,Mode=TwoWay}"/>
+                        </Border.Background>
+                    </Border>
+                </DockPanel>
+                <StackPanel Orientation="Vertical" MinWidth="340">
+                    <TextBlock Text="{Binding GAME_DATE, StringFormat={}{0:dd.MM.yyyy HH:mm},Mode=TwoWay}" Style="{DynamicResource Date}" HorizontalAlignment="Center"></TextBlock>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBox Text="{Binding Goals1,Mode=TwoWay}" Style="{DynamicResource textblockGoals}" Name="home"></TextBox>
+                        <TextBlock Text=":" Style="{DynamicResource HeaderText}"></TextBlock>
+                        <TextBox Text="{Binding Goals2,Mode=TwoWay}" Style="{DynamicResource textblockGoals}" Name="guest"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <DockPanel Height="60" Margin="10" Width="60">
+                    <Border Height="60" Width="60" VerticalAlignment="Center">
+                        <Border.Background>
+                            <ImageBrush Stretch="Fill" ImageSource="{Binding Logo2,Mode=TwoWay}"/>
+                        </Border.Background>
+                    </Border>
+                </DockPanel>
+            </StackPanel>
+        </Border>
+        <Button Style="{DynamicResource signInButton1}" VerticalAlignment="Bottom" Margin="10" Content="{DynamicResource update}" Command="{Binding SaveCommand}" Click="Button_Click" Name="upd"></Button>
+    </Grid>
+</Window>

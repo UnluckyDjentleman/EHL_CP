@@ -1,0 +1,62 @@
+﻿<Page x:Class="WpfApp1.AdminRosters"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminRosters">
+    <Page.Resources>
+        <ResourceDictionary Source="/Styles/ElementsStyle.xaml"></ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Style="{DynamicResource header}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Icons/hp.png"></ImageBrush>
+                </Grid.Background>
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBlock Style="{DynamicResource HeaderText}" Text="{DynamicResource rosters}"></TextBlock>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ScrollViewer>
+                <ListView Background="Transparent" Name="ListViewTeams" HorizontalAlignment="Center" BorderThickness="0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Style="{DynamicResource expander}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="{Binding Logo}" Stretch="Fill"></ImageBrush>
+                                    </Grid.Background>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <TextBlock Text="{Binding [Team Name]}" Style="{DynamicResource HeaderText}"></TextBlock>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <EventSetter  Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <v:String x:Key="Name">Імя</v:String>
+    <v:String x:Key="Surname">Прозвішча</v:String>
+    <v:String x:Key="Age">Узрост</v:String>
+    <v:String x:Key="Telephone">Тэлефон</v:String>
+    <v:String x:Key="Register">Рэгістрацыя</v:String>
+    <v:String x:Key="login">Логін</v:String>
+    <v:String x:Key="FavouriteTeam">Любімая каманда</v:String>
+    <v:String x:Key="Password">Пароль</v:String>
+    <v:String x:Key="table">Табліца</v:String>
+    <v:String x:Key="matches">Матчы</v:String>
+    <v:String x:Key="rosters">Ростары</v:String>
+    <v:String x:Key="Bonus">Бонус</v:String>
+    <v:String x:Key="article">Артыкулы</v:String>
+    <v:String x:Key="update">Аднавіць</v:String>
+    <v:String x:Key="delete">Выдаліць</v:String>
+    <v:String x:Key="add">Дадаць</v:String>
+</ResourceDictionary>

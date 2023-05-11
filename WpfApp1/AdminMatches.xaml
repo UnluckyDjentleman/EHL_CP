@@ -1,0 +1,75 @@
+﻿<Page x:Class="WpfApp1.AdminMatches"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:vm="clr-namespace:WpfApp1.ViewModels" d:DataContext="{d:DesignInstance Type=vm:MatchVM}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminMatches">
+    <Page.Resources>
+        <ResourceDictionary Source="/Styles/ElementsStyle.xaml"></ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Style="{DynamicResource header}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Icons/hp.png"></ImageBrush>
+                </Grid.Background>
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBlock Style="{DynamicResource HeaderText}" Text="{DynamicResource matches}"></TextBlock>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ScrollViewer>
+                <ListView  BorderThickness="0" Background="Transparent" HorizontalAlignment="Center" Name="MatchList" 
+                           ItemsSource="{Binding PlayRecords}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{DynamicResource ItemM}" Name="template">
+                                <StackPanel Orientation="Horizontal">
+                                    <DockPanel Height="60" Margin="10" Width="60">
+                                        <Border Height="60"
+                                                Width="60" VerticalAlignment="Center">
+                                            <Border.Background>
+                                                <ImageBrush Stretch="Fill" ImageSource="{Binding Logo1,Mode=TwoWay}"/>
+                                            </Border.Background>
+                                        </Border>
+                                    </DockPanel>
+                                    <StackPanel Orientation="Vertical" MinWidth="340">
+                                        <TextBlock Text="{Binding GAME_DATE, StringFormat={}{0:dd.MM.yyyy HH:mm},Mode=TwoWay}" Style="{DynamicResource Date}" HorizontalAlignment="Center"></TextBlock>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <TextBlock Text="{Binding Goals1, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{DynamicResource HeaderText}" Name="home"></TextBlock>
+                                            <TextBlock Text=":" Style="{DynamicResource HeaderText}"></TextBlock>
+                                            <TextBlock Text="{Binding Goals2, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{DynamicResource HeaderText}" Name="guest"></TextBlock>
+                                        </StackPanel>
+                                        <Button Style="{DynamicResource signInButton2}" Content="{DynamicResource update}" x:Name="updater" Height="40" FontSize="14" CommandParameter="{Binding Path=matchid}"
+                                                    Command="{Binding EditCommand}" Click="updater_Click">
+                                        </Button>
+                                    </StackPanel>
+                                    <DockPanel Height="60" Margin="10" Width="60">
+                                        <Border Height="60"
+                                                Width="60" VerticalAlignment="Center">
+                                            <Border.Background>
+                                                <ImageBrush Stretch="Fill" ImageSource="{Binding Logo2,Mode=TwoWay}"/>
+                                            </Border.Background>
+                                        </Border>
+                                    </DockPanel>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>
