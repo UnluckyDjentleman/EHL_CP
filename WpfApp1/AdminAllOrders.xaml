@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfApp1.AdminAllOrders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="AdminAllOrders" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Icons/background2.jpg"></ImageBrush>
+        </Grid.Background>
+        <DataGrid Margin="20" Name="table" CanUserAddRows="False" HorizontalAlignment="Center"
+                      HeadersVisibility="Column" AutoGenerateColumns="False" Background="Transparent" BorderBrush="Transparent"
+                      RowBackground="#1e1e1e" CanUserDeleteRows="False" CanUserResizeColumns="False" BorderThickness="0">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#5b5b5b" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontFamily" Value="Roboto" />
+                    <Setter Property="Height" Value="30" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="User" Binding="{Binding userid}" IsReadOnly="true"  Width="*" Foreground="white" FontFamily="Roboto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding NAME}" IsReadOnly="true"  Width="*" Foreground="white" FontFamily="Roboto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Surname" Binding="{Binding SURNAME}"  IsReadOnly="true"  Width="*" Foreground="white" FontFamily="Roboto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Telephone" Binding="{Binding TELEPHONE}"  IsReadOnly="true"  Width="*" Foreground="white" FontFamily="Roboto"></DataGridTextColumn>
+                <DataGridTextColumn Header="BonusID" Binding="{Binding bonusID}"  IsReadOnly="true"  Width="*" Foreground="white" FontFamily="Roboto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Bonus Name" Binding="{Binding header}" IsReadOnly="true"  Width="*" Foreground="white" FontFamily="Roboto"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

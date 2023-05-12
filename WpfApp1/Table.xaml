@@ -49,7 +49,7 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="Team Name" Binding="{Binding [Team Name]}" IsReadOnly="true"  Width="5*" Foreground="white" FontFamily="Roboto"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Team Name" Binding="{Binding TEAM}" IsReadOnly="true"  Width="5*" Foreground="white" FontFamily="Roboto"></DataGridTextColumn>
                     <DataGridTextColumn Header="W" Binding="{Binding W,UpdateSourceTrigger=PropertyChanged}"  IsReadOnly="true"  Width="*" Foreground="white" FontFamily="Roboto"></DataGridTextColumn>
                     <DataGridTextColumn Header="T" Binding="{Binding T,UpdateSourceTrigger=PropertyChanged}"  IsReadOnly="true"  Width="*" Foreground="white" FontFamily="Roboto"></DataGridTextColumn>
                     <DataGridTextColumn Header="L" Binding="{Binding L,UpdateSourceTrigger=PropertyChanged}"  IsReadOnly="true"  Width="*" Foreground="white" FontFamily="Roboto"></DataGridTextColumn>

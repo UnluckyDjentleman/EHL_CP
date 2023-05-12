@@ -26,5 +26,11 @@ namespace WpfApp1
             InitializeComponent();
             DataContext = new BonusVM();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new AdminAllOrders();
+            window.Show();
+        }
     }
 }

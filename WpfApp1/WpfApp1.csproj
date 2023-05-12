@@ -68,6 +68,9 @@
     <Compile Include="AddingPlayer.xaml.cs">
       <DependentUpon>AddingPlayer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AdminAllOrders.xaml.cs">
+      <DependentUpon>AdminAllOrders.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AdminBonus.xaml.cs">
       <DependentUpon>AdminBonus.xaml</DependentUpon>
     </Compile>
@@ -128,7 +131,6 @@
     <Compile Include="UpdatingPlayer.xaml.cs">
       <DependentUpon>UpdatingPlayer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\ArticleRepo.cs" />
     <Compile Include="ViewModels\ArticleVM.cs" />
     <Compile Include="ViewModels\BonusVM.cs" />
     <Compile Include="ViewModels\Command\RelayCommand.cs" />
@@ -145,6 +147,10 @@
       <DependentUpon>AdminRosters.xaml</DependentUpon>
     </Compile>
     <Page Include="AddingPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminAllOrders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
