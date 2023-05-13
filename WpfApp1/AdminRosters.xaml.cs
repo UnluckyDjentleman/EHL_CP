@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Models.DBModels;
 using WpfApp1.ViewModels;
 
 namespace WpfApp1
@@ -24,9 +25,11 @@ namespace WpfApp1
     /// </summary>
     public partial class AdminRosters : Page
     {
+        private EHLModel model;
         public AdminRosters()
         {
             InitializeComponent();
+            model = new EHLModel();
             FillExpanders();
         }
         public void FillExpanders()
@@ -50,6 +53,9 @@ namespace WpfApp1
             {
                 int i = ListViewTeams.SelectedIndex + 1;
                 var window = new AdminLookRosters(i);
+                var title = model.TEAMS.Where(n => n.teamid == ListViewTeams.SelectedIndex + 1).Single();
+                window.Title = title.Team_Name;
+                window.Icon = BitmapFrame.Create(Application.GetResourceStream(new Uri(title.Logo, UriKind.RelativeOrAbsolute)).Stream);
                 window.Show();
             }
         }

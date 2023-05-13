@@ -45,7 +45,7 @@
                                             </Grid.Background>
                                         </Grid>
                                         <Grid Grid.Column="1">
-                                            <TextBlock Text="{Binding [Team Name]}" Style="{DynamicResource HeaderText}"></TextBlock>
+                                            <TextBlock Text="{Binding [Team Name]}" Style="{DynamicResource HeaderText}" Name="n"></TextBlock>
                                         </Grid>
                                     </Grid>
                         </DataTemplate>

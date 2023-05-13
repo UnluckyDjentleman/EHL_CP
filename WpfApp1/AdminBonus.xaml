@@ -34,7 +34,7 @@
                 <Button Style="{DynamicResource signInButton}" Margin="10" Width="110"  Content="All orders" Click="Button_Click"></Button>
             </Grid>
             <Grid Grid.Column="3">
-                <Button Style="{DynamicResource signInButton}" Margin="10" Width="110"  Content="Close"></Button>
+                <Button Style="{DynamicResource signInButton}" Margin="10" Width="110"  Content="Close" Click="Button_Click_1"></Button>
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
