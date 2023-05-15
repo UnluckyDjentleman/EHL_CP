@@ -18,7 +18,8 @@
         <Grid Grid.Row="0" Style="{DynamicResource header}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <Grid.Background>
@@ -28,10 +29,13 @@
             <Grid Grid.Column="1">
                 <TextBlock Style="{DynamicResource HeaderText}" Text="{DynamicResource article}"></TextBlock>
             </Grid>
+            <Grid Grid.Column="2">
+                <Button Style="{DynamicResource signInButton}" Margin="10" Width="110"  Content="Close" Click="Button_Click"></Button>
+            </Grid>
         </Grid>
         <Grid Grid.Row="1">
             <ScrollViewer>
-                <ListView Background="Transparent" Name="art"  HorizontalAlignment="Center">
+                <ListView Background="Transparent" Name="art"  HorizontalAlignment="Center" BorderThickness="0">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Border Style="{DynamicResource ItemA}" Width="720">

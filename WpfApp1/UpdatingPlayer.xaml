@@ -83,7 +83,7 @@
             <TextBox Style="{DynamicResource textboxtest}" Name="weightbox" Height="20" Margin="50 10"  Text="{Binding Weight, Mode=TwoWay}" FontFamily="Roboto"></TextBox>
         </Grid>
         <Grid Grid.Row="7">
-            <Button Style="{DynamicResource signInButton1}" Content="{DynamicResource add}" Name="updatePlayer" VerticalAlignment="Top" Margin="10" Command="{Binding SaveCommand}"></Button>
+            <Button Style="{DynamicResource signInButton1}" Content="{DynamicResource update}" Name="updatePlayer" VerticalAlignment="Top" Margin="10" Command="{Binding SaveCommand}" Click="updatePlayer_Click"></Button>
         </Grid>
     </Grid>
 </Window>

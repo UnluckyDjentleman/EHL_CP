@@ -30,7 +30,7 @@
                 <TextBlock Style="{DynamicResource HeaderText}" Text="{DynamicResource matches}"></TextBlock>
             </Grid>
             <Grid Grid.Column="2">
-                <Button Style="{DynamicResource signInButton}" Margin="10" Width="110"  Content="Close"></Button>
+                <Button Style="{DynamicResource signInButton}" Margin="10" Width="110"  Content="Close" Click="Button_Click"></Button>
             </Grid>
         </Grid>
         <Grid Grid.Row="1">

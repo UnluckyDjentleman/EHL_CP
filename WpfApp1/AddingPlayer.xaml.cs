@@ -34,5 +34,10 @@ namespace WpfApp1
             teamid = id;
             context = new UnitOfWork();
         }
+
+        private void updatePlayer_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

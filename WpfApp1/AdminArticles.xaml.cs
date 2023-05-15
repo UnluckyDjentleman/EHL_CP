@@ -26,5 +26,19 @@ namespace WpfApp1
             InitializeComponent();
             DataContext = new ArticleVM();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainFrame))
+                {
+                    var wind = new MainWindow();
+                    wind.frameAuth.Content = new Login();
+                    wind.Show();
+                    window.Close();
+                }
+            }
+        }
     }
 }

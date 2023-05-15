@@ -43,5 +43,18 @@ namespace WpfApp1.Views
             }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainFrame))
+                {
+                    var wind = new MainWindow();
+                    wind.frameAuth.Content = new Login();
+                    wind.Show();
+                    window.Close();
+                }
+            }
+        }
     }
 }
